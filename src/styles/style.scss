@@ -1,137 +1,58 @@
-* {
-	padding: 0;
-	margin: 0;
-	border: 0;
-}
-
-*,
-*:before,
-*:after {
-	-webkit-box-sizing: border-box;
-	box-sizing: border-box;
-}
-
-:focus,
-:active {
-	outline: none;
-}
-
-a:focus,
-a:active {
-	outline: none;
-}
-
-nav,
-footer,
-header,
-aside {
-	display: block;
-}
-
-html,
-body {
-	height: 100%;
-	width: 100%;
-	font-size: 100%;
-	line-height: 1;
-	font-size: 14px;
-	-ms-text-size-adjust: 100%;
-	-moz-text-size-adjust: 100%;
-	-webkit-text-size-adjust: 100%;
-}
-
-input,
-button,
-textarea {
-	font-family: inherit;
-}
-
-input::-ms-clear {
-	display: none;
-}
-
-button {
-	cursor: pointer;
-}
-
-button::-moz-focus-inner {
-	padding: 0;
-	border: 0;
-}
-
-a,
-a:visited {
-	text-decoration: none;
-	color: inherit;
-}
-a:hover {
-	text-decoration: none;
-	color: white;
-}
-
-ul li {
-	list-style: none;
-}
-
-img {
-	vertical-align: top;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	font-size: inherit;
-	font-weight: inherit;
-}
-
+@import "nullstyle.scss";
 $bg: rgba(0, 0, 0, 0.3);
 $bg2: aquamarine;
 body {
-	height: 100%;
-	width: 100%;
-	background: $bg;
+  height: 100%;
+  width: 100%;
+  background: $bg;
 }
+
 .wrapper {
-	height: 100%;
-	width: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	position: relative;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 .nav__button,
 .nav__button {
-	position: absolute;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	letter-spacing: 2px;
-	cursor: pointer;
-	top: 40px;
-	width: 100px;
-	height: 50px;
-	border-radius: 10px;
-	background: aliceblue;
-	color: #000;
-	transition: all 0.3s ease 0s;
-	&:hover {
-		filter: invert(10%);
-	}
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 2px;
+  cursor: pointer;
+  top: 40px;
+  width: 100px;
+  height: 50px;
+  border-radius: 10px;
+  background: aliceblue;
+  color: #000;
+  transition: all 0.3s ease 0s;
+  &:hover {
+    filter: invert(10%);
+  }
 }
 .button1 {
-	right: 20px;
+  right: 20px;
 }
 .button2 {
-	right: 140px;
+  right: 140px;
 }
 .button3 {
-	right: 260px;
+  right: 260px;
 }
 .container {
-	max-width: 800px;
-	min-height: 80%;
-	margin: 0 auto;
+  max-width: 800px;
+  min-height: 80%;
+  margin: 0 auto;
+}
+.footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 70px;
+  width: 100%;
 }

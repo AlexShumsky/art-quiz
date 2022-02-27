@@ -19,25 +19,27 @@ class AboutPage {
       const contentP = document.querySelectorAll('.about__content p');
       const styleButtons = document.querySelectorAll('.about__button');
       const input = document.querySelector('input');
-      styleButtons.forEach((button, i) => button.addEventListener('click', function () {
-        switch (i) {
-          case (0): {
-            contentP[i].classList.toggle('colorfied');
-            break;
+      styleButtons.forEach((button, i) =>
+        button.addEventListener('click', function () {
+          switch (i) {
+            case 0: {
+              contentP[i].classList.toggle('colorfied');
+              break;
+            }
+            case 1: {
+              contentP[i].classList.toggle('line-throughted');
+              break;
+            }
+            case 2: {
+              contentP[i].classList.toggle('bold');
+              break;
+            }
+            default:
+              return null;
           }
-          case (1): {
-            contentP[i].classList.toggle('line-throughted');
-            break;
-          }
-          case (2): {
-            contentP[i].classList.toggle('bold');
-            break;
-          }
-          default:
-            return null;
-        }
-        return funcId;
-      }));
+          return funcId;
+        })
+      );
       input.addEventListener('blur', function () {
         const days = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'];
         const date = new Date(this.value.split('.').reverse().join('-'));
@@ -47,4 +49,5 @@ class AboutPage {
     markInput();
   }
 }
+
 export default AboutPage;
