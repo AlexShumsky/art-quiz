@@ -1,0 +1,28 @@
+.settings {
+	&__section {
+		width: 500px;
+		height: 300px;
+		background: rgba(124, 230, 54, 0.2);
+		color: white;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	&__title {
+		font-size: 36px;
+		line-height: 80px;
+		letter-spacing: 2px;
+		color: rgb(220, 47, 243);
+	}
+
+	&__content {
+		display: block;
+		width: 350px;
+		border: 1px solid #000;
+		font-size: 16px;
+		line-height: 15px;
+		padding: 15px 10px;
+	}
+}
