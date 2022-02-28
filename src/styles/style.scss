@@ -3,12 +3,18 @@ $bg: rgba(0, 0, 0, 0.3);
 $bg2: aquamarine;
 $text-color: #1c1c1c;
 $hover: #494747;
+html {
+  user-select: none;
+}
 body {
   height: 100%;
   width: 100%;
   background: $bg;
   font-family: Georgia;
-  color: #1c1c1c;
+  font-size: 32px;
+  font-weight: 600;
+  color: $text-color;
+  transition: all 0.3s ease 0s;
 }
 
 .wrapper {
@@ -25,7 +31,7 @@ body {
 .container {
   padding: 20px 0px;
   max-width: 1200px;
-  height: 100%;
+  height: 800px;
   margin: 0 auto;
   position: relative;
 }
@@ -57,22 +63,53 @@ body {
   align-items: center;
   height: 70px;
   width: 100%;
-
-  font-size: 32px;
-  font-weight: 600;
 }
 /**********LINKS*/
 a {
   color: inherit;
-  transition: all 0.3s ease 0s;
+
   cursor: pointer;
+  font-size: inherit;
   &:hover {
     color: $hover;
   }
+}
+a.link-text {
+  transition: all 0.3s ease 0s;
   &:active {
     display: inline-block;
     transform: scale(1.05);
   }
+}
+a.link-block {
+  transition: box-shadow 0.5s ease;
+  &:hover {
+    box-shadow: 5px 5px 10px 4px rgba(25, 44, 58, 0.2);
+  }
+  &:active {
+    box-shadow: 10px 10px 10px 4px rgba(25, 44, 58, 0.5);
+  }
+}
+a.nav-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  padding: 20px 40px;
+  border-radius: 10px;
+  color: white;
+  background: rgb(180, 65, 65);
+  transition: all 0.3s ease 0s;
+  &:hover {
+    box-shadow: 5px 5px 10px 4px rgba(25, 44, 58, 0.2);
+  }
+}
+/*******IMAGES*/
+img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: top;
 }
 /*******BUTTONS*/
 .nav__button,
