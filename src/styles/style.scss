@@ -1,10 +1,14 @@
-@import "nullstyle.scss";
+@import 'nullstyle.scss';
 $bg: rgba(0, 0, 0, 0.3);
 $bg2: aquamarine;
+$text-color: #1c1c1c;
+$hover: #494747;
 body {
   height: 100%;
   width: 100%;
   background: $bg;
+  font-family: Georgia;
+  color: #1c1c1c;
 }
 
 .wrapper {
@@ -12,10 +16,65 @@ body {
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   position: relative;
 }
+.content {
+  flex: 1 1 auto;
+  border: 1px solid #000;
+}
+.container {
+  padding: 20px 0px;
+  max-width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+.app__page {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border: 1px solid #000;
+  &.active {
+    animation: changePage 2s linear;
+  }
+  @keyframes changePage {
+    0% {
+      left: 0%;
+    }
+    50% {
+      left: -150%;
+    }
+    100% {
+      left: 0%;
+    }
+  }
+}
+.footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 70px;
+  width: 100%;
+
+  font-size: 32px;
+  font-weight: 600;
+}
+/**********LINKS*/
+a {
+  color: inherit;
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  &:hover {
+    color: $hover;
+  }
+  &:active {
+    display: inline-block;
+    transform: scale(1.05);
+  }
+}
+/*******BUTTONS*/
 .nav__button,
 .nav__button {
   position: absolute;
@@ -43,16 +102,4 @@ body {
 }
 .button3 {
   right: 260px;
-}
-.container {
-  max-width: 800px;
-  min-height: 80%;
-  margin: 0 auto;
-}
-.footer {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  height: 70px;
-  width: 100%;
 }

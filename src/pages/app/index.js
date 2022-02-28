@@ -12,7 +12,7 @@ export const pageIds = {
 
 class App {
   constructor() {
-    this.container = document.querySelector('.content');
+    this.container = document.querySelector('.app__page');
     this.initialPage = new MainPage('main');
   }
 
@@ -46,10 +46,19 @@ class App {
     this.enableRouteChange();
   }
 
+  animatePageSwap() {
+    const pageContainer = document.querySelector('.app__page');
+    pageContainer.classList.add('active');
+    setTimeout(() => pageContainer.classList.remove('active'), 2000);
+  }
+
   enableRouteChange() {
     window.addEventListener('hashchange', () => {
-      const hash = window.location.hash.slice(1);
-      this.renderNewPage(hash);
+      this.animatePageSwap();
+      setTimeout(() => {
+        const hash = window.location.hash.slice(1);
+        this.renderNewPage(hash);
+      }, 1000);
     });
   }
 }

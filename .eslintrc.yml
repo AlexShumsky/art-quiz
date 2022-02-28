@@ -5,4 +5,9 @@ extends: airbnb-base/legacy
 parserOptions:
   ecmaVersion: latest
   sourceType: module
-rules: { implicit-arrow-linebreak: off, function-paren-newline: off }
+rules:
+  {
+    implicit-arrow-linebreak: off,
+    function-paren-newline: off,
+    class-methods-use-this: off
+  }
