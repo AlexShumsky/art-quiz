@@ -1,4 +1,3 @@
-$element: rgb(163, 159, 97);
 .main {
   &__section {
     height: 100%;
@@ -11,26 +10,12 @@ $element: rgb(163, 159, 97);
   }
 
   &__logo {
-    height: 100px;
-    width: 100px;
-    margin: 0 auto;
-    background: url('../../assets/svg/logo.svg') center / contain no-repeat;
     margin-bottom: 20px;
-  }
-
-  &__regimes {
-    display: flex;
-    justify-content: space-around;
-    height: calc(100% - 220px);
-    width: 100%;
-    margin-bottom: 20px;
+    background: url('./../../../assets/svg/logo.svg') center / contain no-repeat;
   }
 
   &__regime {
-    height: 500px;
-    width: 415px;
     border-radius: 50px 5px 5px 5px;
-    overflow: hidden;
   }
   &__regime-image {
     height: 80%;
@@ -43,12 +28,5 @@ $element: rgb(163, 159, 97);
     align-items: center;
     text-transform: uppercase;
     background: $element;
-  }
-
-  &__settings {
-  }
-}
-.page {
-  &__link {
   }
 }
