@@ -1,7 +1,7 @@
-import MainHtml from './index.html';
+import ArtistsHtml from './index.html';
 import './style.scss';
 
-class mainPage {
+class ArtistsPage {
   constructor(id) {
     this.container = document.createElement('template');
     this.id = id;
@@ -9,10 +9,13 @@ class mainPage {
 
   render() {
     const template = this.container;
-    template.innerHTML = MainHtml;
+    template.innerHTML = ArtistsHtml;
     const templateInner = template.content.firstChild;
     templateInner.id = this.id;
     return templateInner;
   }
+
+  artistsManage() {}
 }
-export default mainPage;
+
+export default ArtistsPage;

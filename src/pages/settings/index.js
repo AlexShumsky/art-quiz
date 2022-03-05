@@ -4,16 +4,33 @@ import './style.scss';
 class SettingsPage {
   constructor(id) {
     this.container = document.createElement('template');
-    this.container.id = id;
+    this.id = id;
   }
 
   render() {
-    const containerInner = this.container;
-    containerInner.innerHTML = SettingsHtml;
-    return containerInner.content.firstChild;
+    const template = this.container;
+    template.innerHTML = SettingsHtml;
+    const templateInner = template.content.firstChild;
+    templateInner.id = this.id;
+    return templateInner;
   }
 
   settingsManage() {
+    function toggleInput(el) {
+      const input = document.querySelector(
+        `.settings__${Object.values(el.target.dataset)}-input-container input`
+      );
+      input.disabled = !input.disabled;
+    }
+    function manageInputPerCheck() {
+      const checkBoxes = document.querySelectorAll(
+        '.settings__section input[type=checkbox]'
+      );
+      checkBoxes.forEach((checkBox) =>
+        checkBox.addEventListener('input', toggleInput)
+      );
+    }
+    manageInputPerCheck();
     function customizeBars(el) {
       const bar = el.nextElementSibling;
       bar.style.width = `${

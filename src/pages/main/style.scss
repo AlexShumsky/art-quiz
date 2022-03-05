@@ -1,32 +1,8 @@
 .main {
-  &__section {
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
   &__logo {
-    margin-bottom: 20px;
     background: url('./../../../assets/svg/logo.svg') center / contain no-repeat;
   }
-
-  &__regime {
-    border-radius: 50px 5px 5px 5px;
-  }
-  &__regime-image {
-    height: 80%;
-  }
-
-  &__regime-info {
-    height: 20%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-transform: uppercase;
-    background: $element;
-  }
+}
+.main__logo.section__logo {
+  height: 100%;
 }

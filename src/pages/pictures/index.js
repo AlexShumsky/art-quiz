@@ -1,7 +1,7 @@
-import MainHtml from './index.html';
+import PicturesHtml from './index.html';
 import './style.scss';
 
-class mainPage {
+class PicturesPage {
   constructor(id) {
     this.container = document.createElement('template');
     this.id = id;
@@ -9,10 +9,13 @@ class mainPage {
 
   render() {
     const template = this.container;
-    template.innerHTML = MainHtml;
+    template.innerHTML = PicturesHtml;
     const templateInner = template.content.firstChild;
     templateInner.id = this.id;
     return templateInner;
   }
+
+  picturesManage() {}
 }
-export default mainPage;
+
+export default PicturesPage;

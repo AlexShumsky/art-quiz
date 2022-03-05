@@ -1,12 +1,14 @@
 import MainPage from '../main/index.js';
-import AboutPage from '../about/index.js';
+import PicturesPage from '../pictures/index.js';
+import ArtistsPage from '../artists/index.js';
 import SettingsPage from '../settings/index.js';
 import ErrorPage from '../error/index.js';
 
 export const pageIds = {
   MainPage: 'main',
   SettingsPage: 'settings',
-  AboutPage: 'about',
+  PicturesPage: 'pictures',
+  ArtistsPage: 'artists',
   ErrorPage: 'error'
 };
 
@@ -23,8 +25,10 @@ class App {
       page = new MainPage(idPage);
     } else if (idPage === pageIds.SettingsPage) {
       page = new SettingsPage(idPage);
-    } else if (idPage === pageIds.AboutPage) {
-      page = new AboutPage(idPage);
+    } else if (idPage === pageIds.ArtistsPage) {
+      page = new ArtistsPage(idPage);
+    } else if (idPage === pageIds.PicturesPage) {
+      page = new PicturesPage(idPage);
     } else {
       page = new ErrorPage('404');
       setTimeout(() => {
@@ -49,7 +53,7 @@ class App {
   animatePageSwap() {
     const pageContainer = document.querySelector('.app__page');
     pageContainer.classList.add('active');
-    setTimeout(() => pageContainer.classList.remove('active'), 2000);
+    setTimeout(() => pageContainer.classList.remove('active'), 1400);
   }
 
   enableRouteChange() {
@@ -58,7 +62,7 @@ class App {
       setTimeout(() => {
         const hash = window.location.hash.slice(1);
         this.renderNewPage(hash);
-      }, 1000);
+      }, 700);
     });
   }
 }

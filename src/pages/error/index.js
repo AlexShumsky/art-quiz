@@ -1,9 +1,9 @@
 import ErrorHtml from './index.html';
 import './style.scss';
 class ErrorPage {
-  constructor(errer) {
+  constructor(error) {
     this.container = document.createElement('template');
-    this.errerType = errer;
+    this.errorType = error;
   }
 
   render() {
@@ -14,7 +14,7 @@ class ErrorPage {
 
   writeError() {
     const ErrorTitle = document.querySelector('.error__title');
-    ErrorTitle.textContent = `Error ${this.errerType}`;
+    ErrorTitle.textContent = `Error ${this.errorType}`;
   }
 }
 export default ErrorPage;

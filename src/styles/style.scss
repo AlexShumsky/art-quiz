@@ -9,10 +9,13 @@ $bg2: aquamarine;
 $text-color: #1c1c1c;
 $hover: #494747;
 $white: white;
-$element: rgb(163, 159, 97);
+$element-main: rgb(163, 159, 97);
+$element-small: rgb(163, 112, 97);
 $button: rgb(180, 65, 65);
 $range: rgba(196, 196, 196, 1);
-$range-active: rgb(62, 65, 78);
+$range-active: rgb(226, 112, 112);
+$range-disabled: rgb(200, 201, 206);
+$element-enabled: rgb(37, 37, 39);
 /***************SHADOWS*/
 
 $shadow: 2px 2px 15px rgba(0, 0, 0, 0.5);
@@ -135,7 +138,7 @@ body {
 }
 .container {
   max-width: 1200px;
-  height: 800px;
+  min-height: 900px;
   margin: 0 auto;
   position: relative;
 }
@@ -149,7 +152,7 @@ body {
   padding: 20px 0px;
   border: 1px solid #000;
   &.active {
-    animation: changePage 2s linear;
+    animation: changePage 1.4s linear;
   }
   @keyframes changePage {
     0% {
@@ -164,23 +167,65 @@ body {
   }
 }
 /***************ELEMENTS*/
-.app__block-container {
-  display: flex;
-  justify-content: space-around;
-  height: calc(100% - 220px);
-  width: 100%;
-  margin-bottom: 20px;
-}
 .app__block {
   height: 500px;
   width: 415px;
   overflow: hidden;
+  border-radius: 50px 5px 5px 5px;
+  &-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    row-gap: 20px;
+    height: calc(100% - 220px);
+    width: 100%;
+    margin-bottom: 20px;
+  }
 }
-.app__logo {
-  height: 100px;
-  width: 200px;
-  margin: 0 auto;
+
+.section {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  &__logo-container {
+    height: 170px;
+    width: 250px;
+    margin-bottom: 20px;
+  }
+  &__logo {
+    height: 80%;
+    width: 100%;
+  }
+  &__info {
+    text-align: center;
+    text-transform: uppercase;
+  }
 }
+.block {
+  &__info {
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+  }
+  &-image {
+    height: 80%;
+  }
+  &__info.block__info-small {
+    font-size: 20px;
+    background: $element-small;
+  }
+  &__info-main {
+    background: $element-main;
+  }
+}
+
 .footer {
   display: flex;
   justify-content: space-around;
@@ -189,12 +234,11 @@ body {
   width: 100%;
 }
 
-.button1 {
-  right: 20px;
-}
-.button2 {
-  right: 140px;
-}
-.button3 {
-  right: 260px;
+.artists__section,
+.pictures__section {
+  .nav-link {
+    position: absolute;
+    top: 140px;
+    left: 20px;
+  }
 }

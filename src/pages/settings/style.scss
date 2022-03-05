@@ -1,7 +1,6 @@
 .settings {
   &__timer-checkbox-container,
   &__volume-checkbox-container,
-  &__logo-container,
   &__volume-controls,
   &__timer-controls,
   &__volume,
@@ -13,7 +12,6 @@
 
   &__timer-checkbox-container,
   &__volume-checkbox-container,
-  &__logo-container,
   &__volume-controls,
   &__timer-controls {
     justify-content: center;
@@ -34,6 +32,17 @@
   &__timer-input-container {
     position: relative;
     width: 100%;
+  }
+  &__volume-input-container input[type='RANGE']:disabled,
+  &__timer-input-container input[type='RANGE']:disabled {
+    & ~ .settings__volume-input-thumb,
+    & ~ .settings__timer-input-thumb {
+      background: $range-disabled;
+    }
+    & ~ .settings__volume-input-bar,
+    & ~ .settings__timer-input-bar {
+      background: $range-disabled;
+    }
   }
   &__volume-controls,
   &__timer-controls {
@@ -74,9 +83,10 @@
 
     background: $range-active;
     border-radius: 3px;
+    transition: all 0.3s ease 0s;
   }
   &__volume-input-bar {
-    width: 0%;
+    width: 100%;
   }
   &__timer-input-bar {
     width: 40%;
@@ -93,10 +103,11 @@
     border: 1px solid $white;
     border-radius: 50%;
     transform: translateX(-50%);
+    transition: all 0.3s ease 0s;
   }
 
   &__volume-input-thumb {
-    left: 0%;
+    left: 100%;
   }
   &__timer-input-thumb {
     left: 40%;
@@ -126,30 +137,31 @@
       no-repeat;
   }
 
-  // &__timer-checkbox-container,
+  &__timer-checkbox-container,
   &__volume-checkbox-container {
     position: relative;
-
     .custom__checkbox {
       position: absolute;
+      cursor: pointer;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -90%);
       width: 40px;
       height: 40px;
-      border: 1px solid #000;
-
-      &:after {
+      border: 1px solid $range-disabled;
+      background: $range;
+      border-radius: 5px;
+      &:before {
         content: '';
         position: absolute;
         display: none;
         left: 11px;
-        top: 0px;
+        top: -2px;
         width: 17px;
         height: 30px;
-        border: solid rgb(0, 0, 0);
+        border: solid $element-enabled;
         border-width: 0px 5px 5px 0px;
-        transform: rotate(45deg);
+        transform: rotate(40deg);
       }
     }
 
@@ -160,24 +172,7 @@
       opacity: 0;
     }
   }
-  &__volume-info {
-  }
-  &__timer-info {
-  }
 }
-.nav-link {
-}
-.app {
-  &__block-container {
-  }
-
-  &__block {
-  }
-}
-.link-block {
-}
-.settings__volume-checkbox-container
-  input[type='checkbox']:checked
-  ~ .custom__checkbox {
+input[type='checkbox']:checked + .custom__checkbox::before {
   display: block;
 }
