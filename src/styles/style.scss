@@ -152,7 +152,7 @@ body {
   padding: 20px 0px;
   border: 1px solid #000;
   &.active {
-    animation: changePage 1.4s linear;
+    animation: changePage 1s linear;
   }
   @keyframes changePage {
     0% {
@@ -180,7 +180,6 @@ body {
     row-gap: 20px;
     height: calc(100% - 220px);
     width: 100%;
-    margin-bottom: 20px;
   }
 }
 

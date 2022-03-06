@@ -3,7 +3,6 @@ import App from './pages/app/index';
 
 const app = new App();
 app.run();
-
 /*
 LINKS:
 https://app.rs.school/course/entityDetails?course=js-fe-2021Q3&entityType=task&entityId=1233
