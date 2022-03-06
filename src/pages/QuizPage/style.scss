@@ -1,14 +1,22 @@
 .quiz__header {
   width: 100%;
   padding: 20px 0px;
+  min-height: 80px;
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
+.quiz__question {
+  max-width: calc(100% - 480px);
+  margin: 0px 20px;
+  text-align: center;
+}
 .quiz__section {
+  display: flex;
+  flex-direction: column;
   .app {
     &__block-container {
-      height: 100%;
+      height: calc(100% - 120px);
       width: 100%;
       display: flex;
       justify-content: center;
@@ -41,6 +49,7 @@
   &__container {
     border: 1px solid #000;
     border-radius: 20px;
+    overflow: hidden;
   }
   &__bullets {
     position: absolute;
@@ -70,7 +79,7 @@
 .app__block-artists {
   .picture {
     &__container {
-      height: 80%;
+      height: calc(80% - 20px);
       width: 100%;
       margin-bottom: 20px;
       position: relative;
@@ -79,14 +88,21 @@
   .answers {
     &__container {
       width: 100%;
-      height: 20%;
+      min-height: 20%;
       display: flex;
       flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
       padding-bottom: 20px;
       p {
-        width: 50%;
+        width: 45%;
         height: 50%;
         border: 1px solid #000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-size: 28px;
         &:first-child {
           border-width: 0 1px 1px 0;
         }
