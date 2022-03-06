@@ -1,1 +1,2 @@
-﻿# Art-quiz
+# Art-quiz
+

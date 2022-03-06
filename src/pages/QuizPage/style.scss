@@ -1,0 +1,139 @@
+.quiz__header {
+  width: 100%;
+  padding: 20px 0px;
+  min-height: 80px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.quiz__question {
+  max-width: calc(100% - 480px);
+  margin: 0px 20px;
+  text-align: center;
+}
+.quiz__section {
+  display: flex;
+  flex-direction: column;
+  .app {
+    &__block-container {
+      height: calc(100% - 120px);
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &__block-inner {
+      height: 100%;
+      width: 80%;
+      border-radius: 20px;
+      border: 1px solid #000;
+      overflow: hidden;
+      display: none;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    &__block-artists {
+      flex-direction: column;
+      justify-content: center;
+    }
+    &__block-pictures {
+      position: relative;
+      justify-content: space-between;
+      row-gap: 20px;
+    }
+  }
+}
+
+.picture {
+  &__container {
+    border: 1px solid #000;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+  &__bullets {
+    position: absolute;
+    width: 50%;
+    left: 25%;
+    bottom: 5%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__bullet {
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    border: 1px solid #000;
+    background: transparent;
+    transition: all 0.3s ease 0s;
+
+    &.correct {
+      background: green;
+    }
+    &.wrong {
+      background: red;
+    }
+  }
+}
+.app__block-artists {
+  .picture {
+    &__container {
+      height: calc(80% - 20px);
+      width: 100%;
+      margin-bottom: 20px;
+      position: relative;
+    }
+  }
+  .answers {
+    &__container {
+      width: 100%;
+      min-height: 20%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      padding-bottom: 20px;
+      p {
+        width: 45%;
+        height: 50%;
+        border: 1px solid #000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-size: 28px;
+        &:first-child {
+          border-width: 0 1px 1px 0;
+        }
+        &:nth-child(2) {
+          border-width: 0 0px 1px 1px;
+        }
+        &:nth-child(3) {
+          border-width: 1px 1px 0 0;
+        }
+        &:last-child {
+          border-width: 1px 0 0 1px;
+        }
+      }
+    }
+  }
+}
+
+.app__block-pictures {
+  .picture {
+    &__container {
+      height: 45%;
+      width: 48%;
+    }
+
+    &__bullets {
+      position: absolute;
+      width: 50%;
+      left: 25%;
+      bottom: 5%;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}

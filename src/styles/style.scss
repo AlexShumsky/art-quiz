@@ -1,0 +1,244 @@
+/*****************IMPORTS*/
+
+@import 'nullstyle.scss';
+
+/*****************COLORS*/
+
+$bg: rgba(0, 0, 0, 0.3);
+$bg2: aquamarine;
+$text-color: #1c1c1c;
+$hover: #494747;
+$white: white;
+$element-main: rgb(163, 159, 97);
+$element-small: rgb(163, 112, 97);
+$button: rgb(180, 65, 65);
+$range: rgba(196, 196, 196, 1);
+$range-active: rgb(226, 112, 112);
+$range-disabled: rgb(200, 201, 206);
+$element-enabled: rgb(37, 37, 39);
+/***************SHADOWS*/
+
+$shadow: 2px 2px 15px rgba(0, 0, 0, 0.5);
+$shadow-active: 2px 2px 15px rgba(0, 0, 0, 1);
+
+/**********TITLES*/
+
+h2 {
+  font-size: 36px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/**********LINKS*/
+
+a {
+  color: inherit;
+
+  cursor: pointer;
+  font-size: inherit;
+  &:hover {
+    color: $hover;
+  }
+}
+a.link-text {
+  transition: all 0.3s ease 0s;
+  &:active {
+    display: inline-block;
+    transform: scale(1.05);
+  }
+}
+a.link-block {
+  transition: box-shadow 0.5s ease;
+  &:hover {
+    box-shadow: $shadow;
+  }
+  &:active {
+    box-shadow: $shadow-active;
+  }
+}
+a.nav-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 220px;
+  padding: 20px 40px;
+  border-radius: 10px;
+  color: $white;
+  background: $button;
+  transition: all 0.3s ease 0s;
+  &:hover {
+    box-shadow: $shadow;
+  }
+}
+
+/*******IMAGES*/
+
+img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+/*******BUTTONS*/
+
+.nav__button,
+.nav__button {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 2px;
+  cursor: pointer;
+  top: 40px;
+  width: 100px;
+  height: 50px;
+  border-radius: 10px;
+  background: $white;
+  color: $text-color;
+  transition: all 0.3s ease 0s;
+  &:hover {
+    filter: invert(10%);
+  }
+}
+
+/***************INPUTS*/
+
+input {
+  cursor: pointer;
+}
+
+/***************MAIN*/
+
+html {
+  user-select: none;
+}
+body {
+  height: 100%;
+  width: 100%;
+  background: $bg;
+  font-family: Georgia;
+  font-size: 32px;
+  font-weight: 600;
+  color: $text-color;
+  transition: all 0.3s ease 0s;
+}
+
+.wrapper {
+  height: 100%;
+  width: 100%;
+  padding: 20px 0px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.content {
+  flex: 1 1 auto;
+  border: 1px solid #000;
+}
+.container {
+  max-width: 1200px;
+  min-height: 900px;
+  margin: 0 auto;
+  position: relative;
+}
+/***************CONTAINER + ANIMATIONS*/
+.app__page {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  padding: 20px 0px;
+  border: 1px solid #000;
+  &.active {
+    animation: changePage 1s linear;
+  }
+  @keyframes changePage {
+    0% {
+      left: 0%;
+    }
+    50% {
+      left: -150%;
+    }
+    100% {
+      left: 0%;
+    }
+  }
+}
+/***************ELEMENTS*/
+.app__block {
+  height: 500px;
+  width: 415px;
+  overflow: hidden;
+  border-radius: 50px 5px 5px 5px;
+  &-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    row-gap: 20px;
+    height: calc(100% - 220px);
+    width: 100%;
+  }
+}
+
+.section {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  &__logo-container {
+    height: 170px;
+    width: 250px;
+    margin-bottom: 20px;
+  }
+  &__logo {
+    height: 80%;
+    width: 100%;
+  }
+  &__info {
+    text-align: center;
+    text-transform: uppercase;
+  }
+}
+.block {
+  &__info {
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+  }
+  &-image {
+    height: 80%;
+  }
+  &__info.block__info-small {
+    font-size: 20px;
+    background: $element-small;
+  }
+  &__info-main {
+    background: $element-main;
+  }
+}
+
+.footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 70px;
+  width: 100%;
+}
+
+.artists__section,
+.pictures__section {
+  .nav-link {
+    position: absolute;
+    top: 140px;
+    left: 20px;
+  }
+}

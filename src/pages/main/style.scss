@@ -1,0 +1,8 @@
+.main {
+  &__logo {
+    background: url('./../../../assets/svg/logo.svg') center / contain no-repeat;
+  }
+}
+.main__logo.section__logo {
+  height: 100%;
+}

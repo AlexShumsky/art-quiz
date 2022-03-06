@@ -1,0 +1,28 @@
+.artists {
+  &__section {
+  }
+
+  &__logo {
+    background: url('./../../../assets/svg/logo.svg') center / contain no-repeat;
+  }
+
+  &__block.app__block {
+    height: 250px;
+    width: 250px;
+  }
+
+  &__block-image {
+  }
+}
+.app {
+  &__logo {
+  }
+
+  &__block-container {
+  }
+
+  &__block {
+  }
+}
+.link-block {
+}
